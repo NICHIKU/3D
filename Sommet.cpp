@@ -7,53 +7,72 @@ class Sommet{
 
     private:
         int x;
+        int y;
 
     public:
-    Sommet();
-    Sommet(int x);
+        Sommet();
+        Sommet(int x,int y);
 
-    void setSommet(int x);
-    int getSommet() const;
+        void setSommet(int x, int y);
+        void setX(int x);
+        void setY(int y);
 
-    void display() const;
+        int getX() const;
+        int getY() const;
 
-    ~Sommet(); 
+        void display() const;
+
+        ~Sommet(); 
 
 };
 
 
-Sommet::Sommet() :
-    x(0) {}
+Sommet::Sommet():
+    x(0),y(0) {}
 
-Sommet::Sommet(int x) :
-    x(x){}
+Sommet::Sommet(int x,int y) :
+    x(x), y(y){}
 
-void Sommet::setSommet(int x){
+void Sommet::setSommet(int x, int y){
+    this->x = x;
+    this->y = y;
+}
+
+void Sommet::setX(int x){
     this->x = x;
 }
 
-int Sommet::getSommet() const{
+void Sommet::setY(int y){
+    this->y = y;
+}
+
+int Sommet::getX() const{
     return x;
 }
 
+int Sommet::getY() const{
+    return y;
+}
+
 void Sommet::display() const{
-    cout<<"X : "<<x<<endl;
+    cout<<"X : "<<x<<" Y : "<<y<<endl;
 }
 
 Sommet::~Sommet(){
-    cout<< "Destruction X :" << x<<endl;
+    cout<< "Destruction du sommet : " << x << " "<< y <<endl;
 }
 
 int main() {
     Sommet s1;
     s1.display();
 
-    s1.setSommet(3);
+    s1.setSommet(1,2);
     s1.display();
 
-    Sommet s2(4);
-
+    Sommet s2(4,5);
     s2.display();
+    s2.setX(3);
+    s2.setY(6);
 
     return 0;
 }

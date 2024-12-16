@@ -14,11 +14,11 @@ public:
     // Constructeur à partir d'un fichier PLY
     Maillage(const std::string& cheminFichier);
 
-    // Méthode pour sauvegarder le maillage dans un fichier PLY
+    // Méthode pour sauvegarder le maillage dans un autre fichier PLY
     void sauvegarderEnPLY(const std::string& cheminFichier);
 
-    // Affichage des informations du maillage
+    
     void afficher() const;
 };
 
-#endif // MAILLAGE_H
+#endif 

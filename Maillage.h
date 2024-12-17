@@ -5,18 +5,21 @@
 #include <string>
 #include "Sommet.h"
 #include "Face.h"
+using namespace std;
 
 class Maillage {
 public:
-    std::vector<Sommet> sommets;
-    std::vector<Face> faces;
+    vector<Sommet> sommets;
+    vector<Face> faces;
 
     // Constructeur à partir d'un fichier PLY
     Maillage(const std::string& cheminFichier);
 
-    // Méthode pour sauvegarder le maillage dans un autre fichier PLY
+    // Fonction pour sauvegarder le maillage dans un autre fichier PLY
     void sauvegarderEnPLY(const std::string& cheminFichier);
 
+    
+    void homotethie(double facteur);
     
     void afficher() const;
 };

@@ -1,15 +1,16 @@
 #ifndef SOMMET_H
 #define SOMMET_H
 #include <vector>
+using namespace std;
 
 class Sommet {
 private:
     int x, y, z;
-    std::vector<int> voisins;
+    vector<int> voisins;
 
 public:
-    Sommet();  // Constructeur par défaut
-    Sommet(int x, int y, int z);  // Constructeur avec paramètres
+    Sommet();  
+    Sommet(int x, int y, int z);  
 
     void setSommet(int x, int y, int z);
     void setX(int x);
@@ -20,7 +21,8 @@ public:
     int getZ() const;
     void display() const;
     void ajouterVoisin(int index);
-    ~Sommet(); // Destructeur
+    void translater(int dx, int dy, int dz);
+    ~Sommet(); 
 };
 
-#endif // SOMMET_H
+#endif 

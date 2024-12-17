@@ -14,4 +14,4 @@ public:
     bool operator==(const Face& other) const;
 };
 
-#endif // FACE_H
+#endif 

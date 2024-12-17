@@ -16,6 +16,7 @@ int main() {
     try {
         
         Maillage maillage("maillages_exemple/01_cube.ply"); 
+        maillage.homotethie(2.0);
         maillage.sauvegarderEnPLY("output.ply"); 
         cout << "Maillage charge et sauvegarde avec succes !" << endl;
     } catch (const exception& e) {

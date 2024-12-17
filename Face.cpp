@@ -23,7 +23,7 @@ int Face::getS3() const {
     return s3;
 }
 
-// Affichage des sommets d'une face
+// Affichage des sommets 
 void Face::afficher() const {
     cout << "Face : [" << s1 << ", " << s2 << ", " << s3 << "]" << endl;
 }

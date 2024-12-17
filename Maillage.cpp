@@ -48,7 +48,7 @@ Maillage::Maillage(const string& cheminFichier) {
         iss >> nombrePoints >> s1 >> s2 >> s3;
         faces.emplace_back(s1, s2, s3);
 
-        // Mise à jour des voisins
+        // MAJ des voisins
         sommets[s1].ajouterVoisin(s2);
         sommets[s1].ajouterVoisin(s3);
         sommets[s2].ajouterVoisin(s1);
@@ -86,6 +86,16 @@ void Maillage::sauvegarderEnPLY(const string& cheminFichier) {
         fichier << "3 " << face.getS1() << " " << face.getS2() << " " << face.getS3() << "\n";
     }
 }
+
+
+void Maillage::homotethie(double facteur) {
+    for (auto& sommet : sommets) {
+        sommet.setX(sommet.getX() * facteur);
+        sommet.setY(sommet.getY() * facteur);
+        sommet.setZ(sommet.getZ() * facteur);
+    }
+}
+
 
 // Affichage 
 void Maillage::afficher() const {

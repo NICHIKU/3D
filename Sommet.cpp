@@ -48,6 +48,12 @@ void Sommet::ajouterVoisin(int indice) {
     }
 }
 
+void Sommet::translater(int dx, int dy, int dz) {
+    x += dx;
+    y += dy;
+    z += dz;
+}
+
 Sommet::~Sommet() {
     
 }
